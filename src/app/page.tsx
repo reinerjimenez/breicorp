@@ -9,20 +9,24 @@ import { PricingSection } from "@/components/home/PricingSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { BusinessServicesPreview } from "@/components/home/BusinessServicesPreview";
+import { ProductVisualStory } from "@/components/home/ProductVisualStory";
+import { MobileAppSection } from "@/components/home/MobileAppSection";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <SocialProof />
+      <ProductVisualStory />
       <PlatformInteractive />
       <SolutionsGrid />
+      <MobileAppSection />
+      <BusinessServicesPreview />
       <RoiCalculator />
       <Testimonials />
       <SecurityFeature />
       <PricingSection />
       <FaqSection />
-      <BusinessServicesPreview />
       <CtaBanner />
     </>
   );

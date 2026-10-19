@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Analytics } from "@/components/analytics/Analytics";
 import { siteMetadata, company, robotsPolicy } from "@/config/company";
@@ -94,7 +95,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo-breicorp.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/logo-breicorp.webp" />
       </head>
-      <body className={`${inter.variable} min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-orange-600 selection:text-white`}>
+      <body className={`${inter.variable} min-h-screen flex flex-col bg-slate-50 pb-[calc(4rem+env(safe-area-inset-bottom))] text-slate-900 antialiased selection:bg-orange-600 selection:text-white md:pb-0`}>
         <JsonLd type="Organization" />
         <JsonLd type="SoftwareApplication" />
         {analyticsEnabled ? <Analytics /> : null}
@@ -104,6 +105,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingWhatsApp />
+        <MobileBottomBar />
       </body>
     </html>
   );

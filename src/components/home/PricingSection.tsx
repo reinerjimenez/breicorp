@@ -10,9 +10,9 @@ export function PricingSection() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
 
   return (
-    <section className="defer-render py-20 bg-white text-slate-900 border-b border-slate-200">
+    <section className="defer-render border-b border-slate-200 bg-white py-12 text-slate-900 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <div className="mx-auto mb-8 max-w-3xl space-y-4 text-center sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-slate-800 text-xs font-bold uppercase tracking-wider">
             <span>Precios Transparentes</span>
           </div>
@@ -69,7 +69,10 @@ export function PricingSection() {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+        <p className="mb-3 text-center text-xs font-medium text-slate-500 md:hidden">
+          Desliza para comparar los planes
+        </p>
+        <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-4 lg:gap-4">
           {plans.map((plan: Plan) => {
             const price =
               billingCycle === "monthly"
@@ -79,7 +82,7 @@ export function PricingSection() {
             return (
               <div
                 key={plan.id}
-                className={`rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[box-shadow,border-color,transform] duration-200 relative ${
+                className={`relative flex w-[84vw] max-w-[340px] shrink-0 snap-center flex-col justify-between rounded-3xl p-6 transition-[box-shadow,border-color,transform] duration-200 sm:p-7 md:w-auto md:max-w-none ${
                   plan.recommended
                     ? "bg-slate-900 text-white shadow-2xl ring-2 ring-orange-500 scale-[1.02] z-10"
                     : "bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-md"

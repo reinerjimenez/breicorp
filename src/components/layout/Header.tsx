@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { mainNav } from "@/config/navigation";
-import { company } from "@/config/company";
+import { mainNav, mobileNav } from "@/config/navigation";
+import { company, getWhatsAppUrl } from "@/config/company";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import {
   Menu,
   X,
@@ -19,6 +20,7 @@ import Image from "next/image";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMobileAccordion, setActiveMobileAccordion] = useState<string | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -36,6 +38,7 @@ export function Header() {
   // Close mobile menu on page change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setActiveMobileAccordion(null);
     setActiveDropdown(null);
   }, [pathname]);
 
@@ -43,8 +46,12 @@ export function Header() {
     if (!mobileMenuOpen) return;
     const main = document.getElementById("main-content");
     const footer = document.querySelector("body > footer");
+    const mobileBottomBar = document.getElementById("mobile-bottom-navigation");
+    const floatingWhatsApp = document.getElementById("floating-whatsapp");
     main?.setAttribute("inert", "");
     footer?.setAttribute("inert", "");
+    mobileBottomBar?.setAttribute("inert", "");
+    floatingWhatsApp?.setAttribute("inert", "");
     document.body.style.overflow = "hidden";
     const focusable = mobileMenuRef.current?.querySelector<HTMLElement>("a, button");
     focusable?.focus();
@@ -55,7 +62,11 @@ export function Header() {
         return;
       }
       if (event.key !== "Tab" || !mobileMenuRef.current) return;
-      const elements = [...mobileMenuRef.current.querySelectorAll<HTMLElement>('a, button:not([disabled])')];
+      const drawerElements = [...mobileMenuRef.current.querySelectorAll<HTMLElement>('a, button:not([disabled])')]
+        .filter((element) => element.getClientRects().length > 0);
+      const elements = mobileButtonRef.current
+        ? [mobileButtonRef.current, ...drawerElements]
+        : drawerElements;
       if (!elements.length) return;
       const first = elements[0];
       const last = elements[elements.length - 1];
@@ -67,6 +78,8 @@ export function Header() {
       document.removeEventListener("keydown", handleKeyDown);
       main?.removeAttribute("inert");
       footer?.removeAttribute("inert");
+      mobileBottomBar?.removeAttribute("inert");
+      floatingWhatsApp?.removeAttribute("inert");
       document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);
@@ -111,13 +124,13 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex h-16 items-center justify-between xl:h-20">
             {/* Official Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-lg p-1"
+              className="group flex items-center gap-2 rounded-lg p-1 focus:outline-none focus:ring-2 focus:ring-orange-500 xl:gap-3"
             >
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-200 shrink-0">
+              <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-xl shadow-sm transition-transform duration-200 group-hover:scale-105 xl:h-10 xl:w-10">
                 <Image
                   src="/logo-breicorp.webp"
                   alt=""
@@ -132,11 +145,11 @@ export function Header() {
                   <span className="text-xl font-black tracking-tight text-slate-900 group-hover:text-orange-600 transition-colors">
                     BREICORP
                   </span>
-                  <span className="bg-orange-50 text-orange-700 text-[10px] font-bold px-1.5 py-0.5 rounded border border-orange-200">
+                  <span className="hidden bg-orange-50 px-1.5 py-0.5 text-[10px] font-bold text-orange-700 rounded border border-orange-200 xl:inline-flex">
                     SaaS Cloud
                   </span>
                 </div>
-                <span className="text-[11px] text-slate-500 font-medium tracking-tight -mt-0.5">
+                <span className="-mt-0.5 hidden text-[11px] font-medium tracking-tight text-slate-500 xl:block">
                   Software Empresarial & SUNAT
                 </span>
               </div>
@@ -270,19 +283,15 @@ export function Header() {
             </div>
 
             {/* Mobile menu trigger */}
-            <div className="flex items-center gap-2 xl:hidden">
-              <Link
-                href="/contacto"
-                className="inline-flex items-center px-3 py-1.5 text-xs font-bold text-white bg-orange-700 hover:bg-orange-800 rounded-lg shadow-sm"
-              >
-                Solicitar
-              </Link>
-
+            <div className="flex items-center xl:hidden">
               <button
                 ref={mobileButtonRef}
                 type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                onClick={() => {
+                  setMobileMenuOpen(!mobileMenuOpen);
+                  if (mobileMenuOpen) setActiveMobileAccordion(null);
+                }}
+                className="flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-700 transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú de navegación"}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-navigation"
@@ -295,64 +304,99 @@ export function Header() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div ref={mobileMenuRef} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Navegación móvil" className="xl:hidden border-t border-slate-200 bg-white max-h-[calc(100vh-5rem)] overflow-y-auto px-4 pt-3 pb-8 shadow-xl">
-            <div className="space-y-3">
-              {mainNav.map((item) => (
-                <div key={item.label} className="border-b border-slate-100 pb-2">
-                  <div className="font-bold text-slate-900 py-1 text-base">{item.label}</div>
-                  {item.children ? (
-                    <div className="pl-3 mt-1 space-y-2 border-l-2 border-orange-100">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block py-1 text-sm text-slate-600 hover:text-orange-600"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <div className="font-medium text-slate-800">{child.label}</div>
-                          {child.description && (
-                            <div className="text-xs text-slate-400">{child.description}</div>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  ) : (
+          <div ref={mobileMenuRef} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Navegación móvil" className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white px-4 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-2 shadow-xl xl:hidden">
+            <nav aria-label="Navegación móvil" className="space-y-1">
+              {mobileNav.map((item, index) => {
+                const hasChildren = Boolean(item.children?.length);
+                const isOpen = activeMobileAccordion === item.label;
+                const panelId = `mobile-nav-panel-${index}`;
+
+                if (!hasChildren) {
+                  return (
                     <Link
+                      key={item.label}
                       href={item.href}
-                      className="block py-1 text-sm font-medium text-slate-700 hover:text-orange-600"
+                      aria-current={pathname === item.href ? "page" : undefined}
+                      className="flex min-h-12 items-center rounded-xl px-3 text-[15px] font-bold text-slate-900 transition-colors hover:bg-orange-50 hover:text-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Ver {item.label}
+                      {item.label}
                     </Link>
-                  )}
-                </div>
-              ))}
+                  );
+                }
 
-              <div className="pt-4 space-y-2.5">
+                return (
+                  <div key={item.label} className="border-b border-slate-100 last:border-0">
+                    <button
+                      type="button"
+                      className="flex min-h-12 w-full items-center justify-between rounded-xl px-3 text-left text-[15px] font-bold text-slate-900 transition-colors hover:bg-orange-50 hover:text-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
+                      onClick={() => setActiveMobileAccordion(isOpen ? null : item.label)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          setActiveMobileAccordion(isOpen ? null : item.label);
+                        }
+                      }}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        className={`h-5 w-5 text-slate-500 transition-transform duration-200 motion-reduce:transition-none ${isOpen ? "rotate-180 text-orange-700" : ""}`}
+                        aria-hidden="true"
+                      />
+                    </button>
+                    <div id={panelId} hidden={!isOpen} className="pb-2 pl-3">
+                      <div className="space-y-0.5 border-l-2 border-orange-200 pl-2">
+                        {item.children?.map((child) => (
+                          <Link
+                            key={`${child.label}-${child.href}`}
+                            href={child.href}
+                            aria-current={pathname === child.href ? "page" : undefined}
+                            className="flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </nav>
+
+              <div role="group" className="mt-4 space-y-2.5 border-t border-slate-200 pt-4" aria-label="Acciones rápidas">
+                <Link
+                  href="/contacto"
+                  className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-orange-700 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-orange-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span>Solicitar demo</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+
+                <a
+                  href={getWhatsAppUrl("Hola, quiero conocer BREICORP y solicitar información para mi empresa.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-analytics-event="whatsapp_click"
+                  className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <WhatsAppIcon className="h-4 w-4 fill-current" aria-hidden="true" />
+                  <span>WhatsApp</span>
+                </a>
+
                 <Link
                   href="/demo"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-slate-300 text-slate-800 font-bold text-sm hover:bg-slate-50"
+                  className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   <span>Ver demo</span>
                 </Link>
-
-                <Link
-                  href="/contacto"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-orange-700 text-white font-bold text-sm shadow-md hover:bg-orange-800"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span>Solicitar demo personalizada</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                <div className="pt-3 text-center text-xs text-slate-500">
-                  <p>Central de atención: {company.phone}</p>
-                  <p className="mt-0.5">RUC: {company.ruc} — Tingo María, Perú</p>
-                </div>
               </div>
-            </div>
           </div>
         )}
       </header>

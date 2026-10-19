@@ -11,6 +11,7 @@ import { CtaBanner } from "@/components/home/CtaBanner";
 import { BusinessServicesPreview } from "@/components/home/BusinessServicesPreview";
 import { ProductVisualStory } from "@/components/home/ProductVisualStory";
 import { MobileAppSection } from "@/components/home/MobileAppSection";
+import { MobileSectionDisclosure } from "@/components/home/MobileSectionDisclosure";
 
 export default function HomePage() {
   return (
@@ -19,12 +20,27 @@ export default function HomePage() {
       <SocialProof />
       <ProductVisualStory />
       <PlatformInteractive />
-      <SolutionsGrid />
+      <MobileSectionDisclosure
+        title="Soluciones por tipo de empresa"
+        summary="Explora alternativas para MYPE, comercializadoras, distribuidoras y múltiples locales."
+      >
+        <SolutionsGrid />
+      </MobileSectionDisclosure>
       <MobileAppSection />
       <BusinessServicesPreview />
-      <RoiCalculator />
+      <MobileSectionDisclosure
+        title="Estima tu ahorro operativo"
+        summary="Calcula tiempo recuperado según tu volumen de ventas y equipo."
+      >
+        <RoiCalculator />
+      </MobileSectionDisclosure>
       <Testimonials />
-      <SecurityFeature />
+      <MobileSectionDisclosure
+        title="Seguridad y continuidad"
+        summary="Conoce las medidas que respaldan la operación y la información."
+      >
+        <SecurityFeature />
+      </MobileSectionDisclosure>
       <PricingSection />
       <FaqSection />
       <CtaBanner />

@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function ProductVisualStory() {
   return (
-    <section className="defer-render border-b border-slate-200 bg-white py-16 sm:py-20" aria-labelledby="product-visual-title">
+    <section className="defer-render border-b border-slate-200 bg-white py-12 sm:py-20" aria-labelledby="product-visual-title">
       <div className="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="space-y-5 lg:col-span-5">

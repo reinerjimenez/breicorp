@@ -58,7 +58,7 @@ export function FaqSection() {
   return (
     <section
       id="preguntas-frecuentes"
-      className="defer-render scroll-mt-24 py-20 bg-slate-50 text-slate-900 border-b border-slate-200"
+      className="defer-render scroll-mt-24 border-b border-slate-200 bg-slate-50 py-12 text-slate-900 sm:py-20"
     >
       <script
         type="application/ld+json"

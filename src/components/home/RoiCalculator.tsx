@@ -44,7 +44,7 @@ export function RoiCalculator() {
   } = calculateOperationalSavings({ salesPerDay, users: employees, currentMethod });
 
   return (
-    <section className="defer-render py-20 bg-slate-900 text-white border-b border-slate-800 relative overflow-hidden">
+    <section className="defer-render relative overflow-hidden border-b border-slate-800 bg-slate-900 py-12 text-white sm:py-20">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 

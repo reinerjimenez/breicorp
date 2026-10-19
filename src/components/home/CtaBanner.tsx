@@ -5,7 +5,7 @@ import { company, getWhatsAppUrl } from "@/config/company";
 
 export function CtaBanner() {
   return (
-    <section className="defer-render relative overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-16 lg:py-20">
+    <section className="defer-render relative overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-12 text-white sm:py-16 lg:py-20">
       {/* Decorative background shapes */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>

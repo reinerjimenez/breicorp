@@ -4,7 +4,7 @@ import { ArrowRight, BriefcaseBusiness, CheckCircle2, MonitorCog } from "lucide-
 
 export function BusinessServicesPreview() {
   return (
-    <section className="border-b border-slate-200 bg-white py-16 sm:py-20" aria-labelledby="business-lines-title">
+    <section className="border-b border-slate-200 bg-white py-12 sm:py-20" aria-labelledby="business-lines-title">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-widest text-orange-700">Más que software</p>

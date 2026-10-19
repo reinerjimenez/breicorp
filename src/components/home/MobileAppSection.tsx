@@ -5,7 +5,7 @@ import { company } from "@/config/company";
 
 export function MobileAppSection() {
   return (
-    <section className="defer-render overflow-hidden border-b border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-16 text-white sm:py-20" aria-labelledby="mobile-app-title">
+    <section className="defer-render overflow-hidden border-b border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-12 text-white sm:py-20" aria-labelledby="mobile-app-title">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
         <div className="space-y-6 lg:col-span-6">
           <p className="text-xs font-bold uppercase tracking-widest text-orange-400">App móvil BREICORP</p>

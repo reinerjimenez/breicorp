@@ -160,3 +160,60 @@ export const mainNav: NavItem[] = [
     ],
   },
 ];
+
+/**
+ * Navegación móvil reducida mediante divulgación progresiva.
+ * El menú de escritorio conserva la arquitectura completa y sus descripciones.
+ */
+export const mobileNav: NavItem[] = [
+  {
+    label: "Producto",
+    href: "/producto",
+    children: [
+      { label: "Plataforma", href: "/producto" },
+      { label: "Facturación electrónica", href: "/facturacion-electronica" },
+      { label: "Ventas e inventario", href: "/software-ventas-inventario" },
+      { label: "Guías de remisión", href: "/guias-remision-electronicas" },
+      { label: "App móvil", href: "/producto#movilidad" },
+    ],
+  },
+  {
+    label: "Soluciones",
+    href: "/software-empresarial",
+    children: [
+      { label: "Software empresarial", href: "/software-empresarial" },
+      { label: "Automatización", href: "/automatizacion-procesos-empresariales" },
+      { label: "Distribución y logística", href: "/software-distribuidoras" },
+    ],
+  },
+  {
+    label: "Servicios",
+    href: "/servicios-empresariales",
+    children: [
+      { label: "Servicios empresariales", href: "/servicios-empresariales" },
+      { label: "Finanzas", href: "/asesoria-financiera" },
+      { label: "Contabilidad", href: "/contabilidad-empresas" },
+      { label: "Crear empresa", href: "/creacion-de-empresas" },
+      { label: "Ver todos los servicios", href: "/servicios-empresariales" },
+    ],
+  },
+  {
+    label: "Empresas",
+    href: "/software-empresas-peru",
+    children: [
+      { label: "MYPE", href: "/software-mypes" },
+      { label: "Comercializadoras", href: "/software-comercializadoras" },
+      { label: "Distribuidoras", href: "/software-distribuidoras" },
+    ],
+  },
+  { label: "Precios", href: "/precios" },
+  {
+    label: "Empresa",
+    href: "/empresa",
+    children: [
+      { label: "Nosotros", href: "/empresa" },
+      { label: "Casos de éxito", href: "/casos-exito" },
+      { label: "Contacto", href: "/contacto" },
+    ],
+  },
+];

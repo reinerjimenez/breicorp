@@ -4,7 +4,14 @@
  * Solo se incluyen equivalencias semánticas verificables. Las rutas ambiguas
  * conservan su 404 hasta que exista una decisión editorial documentada.
  */
+import { company } from "./company";
+
 export const seoRedirects = [
+  {
+    source: "/libro-reclamaciones",
+    destination: company.complaintsBookUrl,
+    permanent: true,
+  },
   { source: "/plataforma", destination: "/producto", permanent: true },
   { source: "/modulos", destination: "/producto", permanent: true },
   { source: "/app-movil", destination: "/producto#movilidad", permanent: true },

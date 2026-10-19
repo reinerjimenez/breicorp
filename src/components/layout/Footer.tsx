@@ -271,13 +271,17 @@ export function Footer() {
             >
               Términos de Servicio
             </Link>
-            <Link
-              href={company.legalLinks.libroReclamaciones}
-              className="inline-flex items-center gap-1.5 text-amber-300 hover:text-amber-200 font-medium transition-colors"
+            <a
+              href={company.complaintsBookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir el Libro de Reclamaciones oficial de BREICORP en una nueva pestaña"
+              className="inline-flex min-h-11 items-center gap-1.5 text-amber-300 hover:text-amber-200 font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300"
             >
-              <BookOpen className="w-3.5 h-3.5" />
+              <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Libro de Reclamaciones</span>
-            </Link>
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>

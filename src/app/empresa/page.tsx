@@ -2,11 +2,12 @@
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { SocialLinks } from "@/components/shared/SocialLinks";
 import { company, createPageMetadata } from "@/config/company";
+import { Eye, Target } from "lucide-react";
 
 export const metadata = createPageMetadata({
   title: "Sobre BREICORP: Empresa Tecnológica de Software Empresarial en Perú",
   description:
-    "Conoce a BREICORP E.I.R.L., empresa peruana fundada en 2017 dedicada a la digitalización, facturación electrónica y automatización operativa de empresas.",
+    "Conoce a BREICORP E.I.R.L., empresa peruana que integra software, automatización y servicios empresariales para emprendedores y MYPE.",
   path: "/empresa",
 });
 
@@ -19,7 +20,7 @@ export default function EmpresaPage() {
       <PageHeader
         badge={`Trayectoria desde ${company.foundationYear}`}
         title="Tecnología peruana comprometida con el crecimiento de tu negocio"
-        description="Conoce la historia, valores y equipo detrás de BREICORP. Desarrollamos software empresarial con soporte cercano y confiable."
+        description="Conoce la historia y los principios de BREICORP. Combinamos software empresarial, automatización y servicios profesionales con atención cercana."
         breadcrumbs={[{ label: "Empresa" }]}
       />
 
@@ -85,6 +86,38 @@ export default function EmpresaPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div aria-labelledby="purpose-title" className="space-y-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="text-xs font-bold uppercase tracking-wider text-orange-700">
+                Identidad corporativa
+              </span>
+              <h2 id="purpose-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+                Nuestra razón de ser
+              </h2>
+              <p className="mt-4 leading-8 text-slate-600">
+                Trabajamos principalmente con emprendedores, microempresas, pequeñas y medianas empresas que buscan formalizar, ordenar y fortalecer su gestión.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              <article className="h-full rounded-3xl border border-orange-200 bg-orange-50/70 p-6 shadow-sm sm:p-8">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-700 text-white shadow-sm">
+                  <Target className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <h3 className="mt-6 text-2xl font-black text-slate-950">Misión</h3>
+                <p className="mt-4 leading-8 text-slate-700">{company.mission}</p>
+              </article>
+
+              <article className="h-full rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-sm">
+                  <Eye className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <h3 className="mt-6 text-2xl font-black text-slate-950">Visión</h3>
+                <p className="mt-4 leading-8 text-slate-700">{company.vision}</p>
+              </article>
             </div>
           </div>
 

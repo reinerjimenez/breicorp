@@ -17,6 +17,8 @@ const headquarters = {
   countryName: "Perú",
 } as const;
 
+const complaintsBookUrl = "https://breicorpperu.breicorp.pe/reclamos";
+
 export const company = {
   companyName: "BREICORP",
   legalName: "BREICORP E.I.R.L.",
@@ -36,6 +38,11 @@ export const company = {
   salesEmail: "breicorp@gmail.com",
   supportEmail: "breicorp@gmail.com",
   foundationYear: 2017,
+  mission:
+    "Impulsar el desarrollo empresarial en el Perú mediante soluciones integrales que combinan herramientas tecnológicas y gestión contable especializada, ayudando a emprendedores y MYPES a formalizarse, crecer y operar con seguridad.",
+  vision:
+    "Consolidarnos como una de las principales firmas de servicios empresariales en el Perú, impulsando la formalización y el crecimiento sostenible de las MYPES mediante la excelencia contable, la innovación tecnológica y un modelo de gestión eficiente y confiable.",
+  complaintsBookUrl,
   domain: "breicorp.com.pe",
   appDomain: "app.breicorp.com",
   socialLinks: {
@@ -63,7 +70,6 @@ export const company = {
   legalLinks: {
     privacyPolicy: "/politica-privacidad",
     termsOfService: "/terminos-condiciones",
-    libroReclamaciones: "/libro-reclamaciones",
   },
   /**
    * [VERIFICAR_CERTIFICACION] — No publicar certificaciones sin evidencia.

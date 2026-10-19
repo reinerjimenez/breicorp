@@ -34,7 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contacto",
     "/politica-privacidad",
     "/terminos-condiciones",
-    "/libro-reclamaciones",
   ];
 
   return routes.map((route) => ({

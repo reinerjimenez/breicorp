@@ -30,9 +30,9 @@ export function FaqSection() {
         "Toda tu información comercial te pertenece en todo momento. Puedes exportar tus comprobantes electrónicos (archivos XML, CDR de aceptación y PDFs), inventario, clientes y reportes contables a Excel o archivo comprimido cuando lo desees.",
     },
     {
-      question: "¿La plataforma incluye la emisión obligatoria de Guías de Remisión Electrónica (GRE)?",
+      question: "¿La plataforma permite emitir Guías de Remisión Electrónica (GRE) cuando corresponde?",
       answer:
-        "Sí. Puedes emitir Guías de Remisión Remitente (09) y Guías de Remisión Transportista (31) con el código QR y código de barras bidimensional obligatorio para fiscalización en carreteras por parte de la Policía Nacional y la SUNAT.",
+        "Sí. Puedes gestionar Guías de Remisión Remitente (09) y Transportista (31), según la operación y las obligaciones aplicables, con los datos y el código QR correspondientes.",
     },
     {
       question: "¿Ofrecen capacitación y soporte si mi equipo tiene dudas al usar el sistema?",
@@ -109,7 +109,7 @@ export function FaqSection() {
             ¿Tienes una pregunta específica sobre tu negocio?
           </h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto">
-            Nuestros especialistas comerciales y tributarios atienden tus consultas directamente por WhatsApp sin compromiso.
+            Nuestro equipo comercial y de atención empresarial responde tus consultas directamente por WhatsApp sin compromiso.
           </p>
           <a
             href={getWhatsAppUrl("Hola, tengo algunas dudas sobre el funcionamiento de BREICORP para mi negocio.")}

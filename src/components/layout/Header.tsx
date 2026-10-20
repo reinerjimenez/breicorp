@@ -52,6 +52,7 @@ export function Header() {
     footer?.setAttribute("inert", "");
     mobileBottomBar?.setAttribute("inert", "");
     floatingWhatsApp?.setAttribute("inert", "");
+    document.body.dataset.mobileMenuOpen = "true";
     document.body.style.overflow = "hidden";
     const focusable = mobileMenuRef.current?.querySelector<HTMLElement>("a, button");
     focusable?.focus();
@@ -80,6 +81,7 @@ export function Header() {
       footer?.removeAttribute("inert");
       mobileBottomBar?.removeAttribute("inert");
       floatingWhatsApp?.removeAttribute("inert");
+      delete document.body.dataset.mobileMenuOpen;
       document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);

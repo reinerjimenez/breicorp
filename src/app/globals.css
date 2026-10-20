@@ -86,6 +86,36 @@ body {
   background-color: var(--color-background);
 }
 
+/* Compact mobile navigation with a legible fallback when backdrop-filter is unavailable. */
+.mobile-bottom-glass {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.88) inset;
+  transition: opacity 180ms ease-out, transform 180ms ease-out, visibility 180ms ease-out;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mobile-bottom-glass {
+    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+  }
+}
+
+#floating-whatsapp {
+  transition: opacity 180ms ease-out, transform 180ms ease-out, visibility 180ms ease-out;
+}
+
+body[data-mobile-menu-open="true"] #mobile-bottom-navigation,
+body[data-mobile-menu-open="true"] #floating-whatsapp {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
 /* Skip layout and paint work for sections that start well below the first viewport. */
 .defer-render {
   content-visibility: auto;

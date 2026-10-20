@@ -23,7 +23,10 @@ export function FloatingWhatsApp() {
   }, [isOpen]);
 
   return (
-    <div id="floating-whatsapp" className="fixed bottom-6 right-6 z-40 hidden flex-col items-end md:flex print:hidden">
+    <div
+      id="floating-whatsapp"
+      className="fixed bottom-[calc(5.75rem+env(safe-area-inset-bottom))] right-4 z-40 flex flex-col items-end print:hidden md:bottom-6 md:right-6"
+    >
       {/* Floating Card Popup */}
       {isOpen && (
         <div

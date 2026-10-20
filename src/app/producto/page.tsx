@@ -50,7 +50,7 @@ export default function ProductPage() {
       title: "Módulo de Inventario & Kardex Valorizado",
       icon: Boxes,
       description:
-        "Control milimétrico del inventario en uno o múltiples almacenes con costeo promedio ponderado para auditoría contable y tributaria.",
+        "Control detallado del inventario en uno o múltiples almacenes con costeo promedio ponderado para revisión contable y tributaria.",
       features: [
         "Kardex físico y valorizado exportable a Excel en formato SUNAT",
         "Traslados entre locales con confirmación de despacho y recepción",
@@ -235,7 +235,7 @@ export default function ProductPage() {
 
                     <p className="text-xs text-slate-400 leading-relaxed">
                       Este módulo opera de forma nativa e integrada con toda la suite de BREICORP,
-                      garantizando que ninguna venta quede sin comprobante ni descuento de inventario.
+                      ayudando a relacionar cada venta con su comprobante y el movimiento de inventario asociado.
                     </p>
 
                     <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
@@ -256,7 +256,7 @@ export default function ProductPage() {
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <h3 className="text-2xl font-bold">Arquitectura Técnica y Confiabilidad</h3>
             <p className="text-xs text-slate-400">
-              Construido para soportar alto tráfico en fechas de alta demanda comercial sin lentitud.
+              Diseñado para sostener una respuesta ágil en fechas de alta demanda comercial.
             </p>
           </div>
 
@@ -269,7 +269,7 @@ export default function ProductPage() {
             <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-2">
               <Database className="w-6 h-6 text-cyan-400 mx-auto" />
               <div className="text-sm font-bold">Bases de Datos Aisladas</div>
-              <div className="text-xs text-slate-400">Seguridad estricta para garantizar la privacidad de tu negocio</div>
+              <div className="text-xs text-slate-400">Controles de acceso orientados a proteger la privacidad de tu negocio</div>
             </div>
             <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-2">
               <Cpu className="w-6 h-6 text-emerald-400 mx-auto" />
@@ -279,7 +279,7 @@ export default function ProductPage() {
             <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-2">
               <Lock className="w-6 h-6 text-amber-400 mx-auto" />
               <div className="text-sm font-bold">Comunicaciones TLS 1.3</div>
-              <div className="text-xs text-slate-400">Cifrado estricto de todas las conexiones desde caja y móvil</div>
+              <div className="text-xs text-slate-400">Protección de datos en tránsito para conexiones desde caja y móvil</div>
             </div>
           </div>
         </div>

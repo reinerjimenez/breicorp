@@ -24,9 +24,9 @@ export function SecurityFeature() {
     },
     {
       icon: Lock,
-      title: "Cifrado de Extremo a Extremo",
+      title: "Conexiones Cifradas mediante HTTPS",
       description:
-        "Las comunicaciones entre tu navegador y la plataforma utilizan conexiones HTTPS cifradas.",
+        "Las comunicaciones entre el navegador y la plataforma utilizan conexiones HTTPS para proteger los datos durante su transmisión.",
     },
     {
       icon: UserCheck,
@@ -38,7 +38,7 @@ export function SecurityFeature() {
       icon: Server,
       title: "Continuidad de la Operación",
       description:
-        "Arquitectura en la nube diseñada para operar en horas pico sin interrupciones, permitiéndote atender tus cajas con total fluidez.",
+        "Arquitectura en la nube diseñada para sostener la operación en momentos de alta demanda y reducir interrupciones.",
     },
     {
       icon: FileCheck,
@@ -57,7 +57,7 @@ export function SecurityFeature() {
             <span>Seguridad y Continuidad Operativa</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-            La información financiera y comercial de tu empresa, siempre protegida
+            Medidas de protección para la información financiera y comercial de tu empresa
           </h2>
           <p className="text-base sm:text-lg text-slate-300">
             En un negocio no hay margen para perder datos de ventas ni arriesgarse a contingencias con SUNAT.

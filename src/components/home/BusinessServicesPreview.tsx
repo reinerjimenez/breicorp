@@ -51,7 +51,7 @@ export function BusinessServicesPreview() {
                   Finanzas, análisis, planificación, consultoría, contabilidad, orientación legal y formalización para empresas.
                 </p>
                 <ul className="mt-5 space-y-2 text-sm text-slate-700">
-                  {["Alcance definido según la necesidad", "Acompañamiento para MYPE", "Lenguaje prudente y sin garantías"].map((item) => (
+                  {["Alcance definido según la necesidad", "Acompañamiento para MYPE", "Alcance claro y recomendaciones responsables"].map((item) => (
                     <li key={item} className="flex gap-2">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-orange-600" aria-hidden="true" />
                       {item}

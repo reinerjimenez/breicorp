@@ -1,10 +1,75 @@
 "use client";
 
+import type { LucideIcon } from "lucide-react";
+import {
+  BadgeDollarSign,
+  BriefcaseBusiness,
+  Home,
+  LayoutDashboard,
+  PlayCircle,
+} from "lucide-react";
 import Link from "next/link";
-import { ExternalLink, Home } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
-import { getWhatsAppUrl } from "@/config/company";
+
+type MobileNavItem = {
+  label: string;
+  href: string;
+  icon: LucideIcon;
+  matches: (pathname: string) => boolean;
+};
+
+const productRoutes = new Set([
+  "/producto",
+  "/facturacion-electronica",
+  "/software-ventas-inventario",
+  "/guias-remision-electronicas",
+]);
+
+const serviceRoutes = new Set([
+  "/servicios-empresariales",
+  "/servicios-empresariales-tingo-maria",
+  "/asesoria-financiera",
+  "/analisis-financiero",
+  "/planificacion-financiera",
+  "/educacion-financiera",
+  "/consultoria-empresarial",
+  "/asesoria-legal-empresas",
+  "/contabilidad-empresas",
+  "/creacion-de-empresas",
+]);
+
+const items: MobileNavItem[] = [
+  {
+    label: "Inicio",
+    href: "/",
+    icon: Home,
+    matches: (pathname) => pathname === "/",
+  },
+  {
+    label: "Producto",
+    href: "/producto",
+    icon: LayoutDashboard,
+    matches: (pathname) => productRoutes.has(pathname),
+  },
+  {
+    label: "Servicios",
+    href: "/servicios-empresariales",
+    icon: BriefcaseBusiness,
+    matches: (pathname) => serviceRoutes.has(pathname),
+  },
+  {
+    label: "Planes",
+    href: "/precios",
+    icon: BadgeDollarSign,
+    matches: (pathname) => pathname === "/precios",
+  },
+  {
+    label: "Demo",
+    href: "/demo",
+    icon: PlayCircle,
+    matches: (pathname) => pathname === "/demo",
+  },
+];
 
 export function MobileBottomBar() {
   const pathname = usePathname();
@@ -12,43 +77,38 @@ export function MobileBottomBar() {
   return (
     <nav
       id="mobile-bottom-navigation"
-      aria-label="Acciones principales"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-6px_24px_rgba(15,23,42,0.08)] backdrop-blur-md md:hidden print:hidden"
+      aria-label="Navegación rápida"
+      className="mobile-bottom-glass fixed inset-x-3 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] z-40 h-[68px] rounded-[22px] print:hidden md:hidden"
     >
-      <div className="mx-auto grid h-16 max-w-md grid-cols-3 px-2">
-        <Link
-          href="/"
-          aria-current={pathname === "/" ? "page" : undefined}
-          className={`flex min-h-11 flex-col items-center justify-center gap-1 rounded-lg text-[11px] font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-orange-600 ${
-            pathname === "/" ? "text-orange-700" : "text-slate-600 hover:text-orange-700"
-          }`}
-        >
-          <Home className="h-5 w-5" aria-hidden="true" />
-          <span>Inicio</span>
-        </Link>
+      <div className="grid h-full grid-cols-5 gap-0.5 p-1.5">
+        {items.map((item) => {
+          const Icon = item.icon;
+          const isActive = item.matches(pathname);
 
-        <a
-          href={getWhatsAppUrl("Hola, quiero conocer BREICORP y solicitar información para mi empresa.")}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-analytics-event="whatsapp_click"
-          className="flex min-h-11 flex-col items-center justify-center gap-1 rounded-lg text-[11px] font-bold text-emerald-700 transition-colors hover:text-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-emerald-600"
-        >
-          <WhatsAppIcon className="h-5 w-5 fill-current" aria-hidden="true" />
-          <span>WhatsApp</span>
-        </a>
-
-        <Link
-          href="/demo"
-          aria-current={pathname === "/demo" ? "page" : undefined}
-          data-analytics-event="demo_open"
-          className={`flex min-h-11 flex-col items-center justify-center gap-1 rounded-lg text-[11px] font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-orange-600 ${
-            pathname === "/demo" ? "text-orange-700" : "text-slate-600 hover:text-orange-700"
-          }`}
-        >
-          <ExternalLink className="h-5 w-5" aria-hidden="true" />
-          <span>Demo</span>
-        </Link>
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-label={item.label}
+              aria-current={isActive ? "page" : undefined}
+              data-analytics-event={item.href === "/demo" ? "demo_open" : undefined}
+              className={`relative flex min-h-11 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-0.5 text-[11px] leading-none transition-[color,background-color] duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-orange-600 ${
+                isActive
+                  ? "bg-orange-50/85 font-extrabold text-[#C2410C]"
+                  : "font-bold text-slate-600 hover:bg-white/55 hover:text-orange-700"
+              }`}
+            >
+              {isActive ? (
+                <span
+                  aria-hidden="true"
+                  className="absolute top-1 h-0.5 w-4 rounded-full bg-[#FF6003]"
+                />
+              ) : null}
+              <Icon className="h-5 w-5 shrink-0" strokeWidth={isActive ? 2.4 : 2} aria-hidden="true" />
+              <span className="block max-w-full whitespace-nowrap">{item.label}</span>
+            </Link>
+          );
+        })}
       </div>
     </nav>
   );

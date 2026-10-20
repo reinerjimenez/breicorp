@@ -27,7 +27,7 @@ export default function SeguridadPage() {
               <Database className="w-8 h-8 text-orange-600" />
               <h3 className="font-bold text-lg text-slate-900">Respaldos Continuos y Automáticos</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Toda la base de datos se respalda de forma periódica en servidores con réplicas geográficas. Si sufres el robo o rotura de tu computadora en tienda, tus datos están a salvo en la nube.
+                Toda la base de datos se respalda de forma periódica en servidores con réplicas geográficas. Si sufres el robo o rotura de tu computadora en tienda, la información alojada en la nube no depende únicamente de ese equipo físico.
               </p>
             </div>
 

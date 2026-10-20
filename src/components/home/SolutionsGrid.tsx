@@ -29,7 +29,7 @@ export function SolutionsGrid() {
       subtitle: "Velocidad en el mostrador para no hacer esperar a tus clientes",
       icon: Building,
       description:
-        "Pensado para negocios con alto flujo diario de clientes. Cobra en segundos con lector de barras, acepta Yape, Plin y tarjetas, y mantén tu inventario siempre al día.",
+        "Pensado para negocios con alto flujo diario de clientes. Cobra en segundos con lector de barras, acepta Yape, Plin y tarjetas, y mantén el inventario actualizado con cada operación registrada.",
       benefits: [
         "Ventas rápidas con atajos de teclado o táctil",
         "Arqueos y cierres de caja sin faltantes misteriosos",
@@ -43,7 +43,7 @@ export function SolutionsGrid() {
       subtitle: "Control de preventa en la calle, stock y guías de remisión",
       icon: Truck,
       description:
-        "Gestiona múltiples listas de precios por volumen, vendedores comisionistas en ruta con app móvil, y emisión obligatoria de Guías de Remisión Electrónica con código QR.",
+        "Gestiona múltiples listas de precios por volumen, vendedores comisionistas en ruta y Guías de Remisión Electrónica con código QR cuando correspondan a la operación.",
       benefits: [
         "Guías de remisión remitente y transportista al instante",
         "Preventa y pedidos móviles en tiempo real",

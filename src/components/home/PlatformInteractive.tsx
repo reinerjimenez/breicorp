@@ -52,7 +52,7 @@ export function PlatformInteractive() {
       title: "Inventario & Kardex",
       shortTitle: "Inventario",
       icon: Boxes,
-      headline: "Control exacto de stock físico y valorizado en múltiples almacenes",
+      headline: "Controla el stock físico y valorizado en múltiples almacenes",
       description:
         "Cada venta descuenta automáticamente de tu inventario. Conoce en tiempo real cuánto stock tienes en cada tienda o almacén, cuándo reponer mercadería y el costo real de tu mercadería.",
       highlights: [
@@ -80,9 +80,9 @@ export function PlatformInteractive() {
       title: "Guías de Remisión (GRE)",
       shortTitle: "Guías GRE",
       icon: Truck,
-      headline: "Cumple con la exigencia obligatoria de Guías Electrónicas SUNAT",
+      headline: "Gestiona Guías Electrónicas SUNAT cuando correspondan a la operación",
       description:
-        "Genera guías de remisión remitente y transportista en segundos. Cumple con la normativa SUNAT de despacho con código QR impreso para control de fiscalización en carretera.",
+        "Genera guías de remisión remitente y transportista según la operación, con los datos y el código QR que correspondan para el traslado.",
       highlights: [
         "Guía de Remisión Remitente (09) y Transportista (31)",
         "Generación inmediata del código QR obligatorio para fiscalización",

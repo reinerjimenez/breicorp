@@ -89,6 +89,7 @@ export function MobileBottomBar() {
             <Link
               key={item.href}
               href={item.href}
+              prefetch={item.href === "/servicios-empresariales" ? false : undefined}
               aria-label={item.label}
               aria-current={isActive ? "page" : undefined}
               data-analytics-event={item.href === "/demo" ? "demo_open" : undefined}

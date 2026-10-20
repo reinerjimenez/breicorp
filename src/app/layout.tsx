@@ -70,15 +70,6 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
   },
-  icons: {
-    icon: [
-      { url: "/logo-breicorp.webp", type: "image/webp" },
-    ],
-    shortcut: ["/logo-breicorp.webp"],
-    apple: [
-      { url: "/logo-breicorp.webp", type: "image/webp" },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -90,11 +81,6 @@ export default function RootLayout({
     (process.env.SITE_ENV === "production" || process.env.SITE_ENV === "staging");
   return (
     <html lang="es-PE">
-      <head>
-        <link rel="icon" href="/logo-breicorp.webp" type="image/webp" />
-        <link rel="shortcut icon" href="/logo-breicorp.webp" type="image/webp" />
-        <link rel="apple-touch-icon" href="/logo-breicorp.webp" />
-      </head>
       <body className={`${inter.variable} min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-orange-600 selection:text-white`}>
         <JsonLd type="Organization" />
         <JsonLd type="SoftwareApplication" />

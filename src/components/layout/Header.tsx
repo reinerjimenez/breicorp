@@ -242,6 +242,7 @@ export function Header() {
                             <Link
                               key={child.href}
                               href={child.href}
+                              prefetch={child.href === "/producto"}
                               className={`block p-2.5 rounded-xl transition-colors duration-150 hover:bg-slate-50 group/item ${
                                 pathname === child.href ? "bg-orange-50/60" : ""
                               }`}

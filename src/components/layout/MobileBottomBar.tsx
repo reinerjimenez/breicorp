@@ -78,9 +78,9 @@ export function MobileBottomBar() {
     <nav
       id="mobile-bottom-navigation"
       aria-label="Navegación rápida"
-      className="mobile-bottom-glass fixed inset-x-3 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] z-40 h-[68px] rounded-[22px] print:hidden md:hidden"
+      className="mobile-bottom-glass fixed inset-x-3 bottom-[calc(0.625rem+env(safe-area-inset-bottom))] z-40 h-[62px] rounded-[28px] print:hidden md:hidden"
     >
-      <div className="grid h-full grid-cols-5 gap-0.5 p-1.5">
+      <div className="relative z-10 grid h-full grid-cols-5 gap-0.5 p-2">
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = item.matches(pathname);
@@ -92,16 +92,16 @@ export function MobileBottomBar() {
               aria-label={item.label}
               aria-current={isActive ? "page" : undefined}
               data-analytics-event={item.href === "/demo" ? "demo_open" : undefined}
-              className={`relative flex min-h-11 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-0.5 text-[11px] leading-none transition-[color,background-color] duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-orange-600 ${
+              className={`relative flex min-h-11 min-w-0 flex-col items-center justify-center gap-0.5 rounded-[19px] border px-0.5 text-[11px] leading-none transition-[color,background-color,border-color,box-shadow,transform] duration-150 active:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-orange-600 ${
                 isActive
-                  ? "bg-orange-50/85 font-extrabold text-[#C2410C]"
-                  : "font-bold text-slate-600 hover:bg-white/55 hover:text-orange-700"
+                  ? "border-white/50 bg-white/40 [font-weight:650] text-[#FF6003] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)]"
+                  : "border-transparent font-medium text-slate-600 hover:bg-white/25 hover:text-orange-700"
               }`}
             >
               {isActive ? (
                 <span
                   aria-hidden="true"
-                  className="absolute top-1 h-0.5 w-4 rounded-full bg-[#FF6003]"
+                  className="absolute top-1 h-0.5 w-3.5 rounded-full bg-[#FF6003]"
                 />
               ) : null}
               <Icon className="h-5 w-5 shrink-0" strokeWidth={isActive ? 2.4 : 2} aria-hidden="true" />

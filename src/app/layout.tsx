@@ -95,7 +95,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo-breicorp.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/logo-breicorp.webp" />
       </head>
-      <body className={`${inter.variable} min-h-screen flex flex-col bg-slate-50 pb-[calc(5.5rem+env(safe-area-inset-bottom))] text-slate-900 antialiased selection:bg-orange-600 selection:text-white md:pb-0`}>
+      <body className={`${inter.variable} min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-orange-600 selection:text-white`}>
         <JsonLd type="Organization" />
         <JsonLd type="SoftwareApplication" />
         {analyticsEnabled ? <Analytics /> : null}

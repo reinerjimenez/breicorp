@@ -55,6 +55,10 @@
   --radius-2xl: 1.25rem;
 }
 
+:root {
+  --mobile-bottom-nav-space: calc(6.5rem + env(safe-area-inset-bottom));
+}
+
 /* ============================================================
    Base Styles
    ============================================================ */
@@ -86,21 +90,50 @@ body {
   background-color: var(--color-background);
 }
 
+@media screen and (max-width: 767px) {
+  body {
+    padding-bottom: var(--mobile-bottom-nav-space);
+  }
+}
+
 /* Compact mobile navigation with a legible fallback when backdrop-filter is unavailable. */
 .mobile-bottom-glass {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.78);
+  isolation: isolate;
+  overflow: hidden;
+  background: rgba(248, 250, 252, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow:
-    0 8px 30px rgba(15, 23, 42, 0.14),
-    0 1px 0 rgba(255, 255, 255, 0.88) inset;
-  transition: opacity 180ms ease-out, transform 180ms ease-out, visibility 180ms ease-out;
+    0 8px 32px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  transition:
+    opacity 180ms var(--ease-out-expo),
+    transform 180ms var(--ease-out-expo),
+    visibility 180ms var(--ease-out-expo);
+}
+
+.mobile-bottom-glass::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.42),
+    rgba(255, 255, 255, 0.08)
+  );
+  content: "";
+  pointer-events: none;
 }
 
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .mobile-bottom-glass {
-    background: rgba(255, 255, 255, 0.72);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    backdrop-filter: blur(16px) saturate(140%);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.38),
+      rgba(255, 255, 255, 0.18)
+    );
+    -webkit-backdrop-filter: blur(22px) saturate(165%);
+    backdrop-filter: blur(22px) saturate(165%);
   }
 }
 

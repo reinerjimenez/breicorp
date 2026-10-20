@@ -25,7 +25,7 @@ export function FloatingWhatsApp() {
   return (
     <div
       id="floating-whatsapp"
-      className="fixed bottom-[calc(5.75rem+env(safe-area-inset-bottom))] right-4 z-40 flex flex-col items-end print:hidden md:bottom-6 md:right-6"
+      className="fixed bottom-[calc(5.375rem+env(safe-area-inset-bottom))] right-4 z-40 flex flex-col items-end print:hidden md:bottom-6 md:right-6"
     >
       {/* Floating Card Popup */}
       {isOpen && (
@@ -109,7 +109,7 @@ export function FloatingWhatsApp() {
       <button
         ref={triggerRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="group relative flex min-h-12 min-w-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] p-3 text-white shadow-lg shadow-[#25D366]/30 transition-all duration-200 hover:bg-[#20bd5a] hover:shadow-xl hover:shadow-[#25D366]/40 hover:-translate-y-0.5 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-emerald-300 sm:px-4 sm:py-3"
+        className="group relative flex min-h-12 min-w-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] p-3 text-white shadow-lg shadow-[#25D366]/30 transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#20bd5a] hover:shadow-xl hover:shadow-[#25D366]/40 hover:-translate-y-0.5 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-emerald-300 md:px-4 md:py-3"
         aria-label={isOpen ? "Cerrar" : "Consultar por WhatsApp"}
         aria-expanded={isOpen}
         aria-controls="whatsapp-panel"
@@ -121,7 +121,7 @@ export function FloatingWhatsApp() {
             <WhatsAppIcon className="w-6 h-6 fill-current text-white" />
           )}
         </span>
-        <span className="font-bold text-sm tracking-tight hidden sm:inline-block pr-1 text-white">
+        <span className="hidden pr-1 text-sm font-bold tracking-tight text-white md:inline-block">
           {isOpen ? "Cerrar" : "Consultar por WhatsApp"}
         </span>
       </button>

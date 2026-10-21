@@ -369,3 +369,58 @@ button:not(:disabled),
 .reveal-stagger > .reveal:nth-child(4) { transition-delay: 180ms; }
 .reveal-stagger > .reveal:nth-child(5) { transition-delay: 240ms; }
 .reveal-stagger > .reveal:nth-child(6) { transition-delay: 300ms; }
+
+/* ============================================================
+   Client logos marquee
+   ============================================================ */
+
+@keyframes clients-marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.clients-carousel__viewport {
+  overflow: hidden;
+}
+
+.clients-carousel__track {
+  display: flex;
+  width: max-content;
+  animation: clients-marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.clients-carousel__group {
+  display: flex;
+  flex: none;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.clients-carousel__viewport:hover .clients-carousel__track,
+.clients-carousel__viewport:focus-within .clients-carousel__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-carousel__viewport {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
+  .clients-carousel__track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .clients-carousel__group {
+    padding-right: 0;
+  }
+
+  .clients-carousel__duplicate {
+    display: none;
+  }
+}

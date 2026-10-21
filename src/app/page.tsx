@@ -2,7 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { SocialProof } from "@/components/home/SocialProof";
 import { PlatformInteractive } from "@/components/home/PlatformInteractive";
 import { SolutionsGrid } from "@/components/home/SolutionsGrid";
-import { RoiCalculator } from "@/components/home/RoiCalculator";
+import { ClientsCarousel } from "@/components/home/ClientsCarousel";
 import { Testimonials } from "@/components/home/Testimonials";
 import { SecurityFeature } from "@/components/home/SecurityFeature";
 import { PricingSection } from "@/components/home/PricingSection";
@@ -28,12 +28,7 @@ export default function HomePage() {
       </MobileSectionDisclosure>
       <MobileAppSection />
       <BusinessServicesPreview />
-      <MobileSectionDisclosure
-        title="Estima tu ahorro operativo"
-        summary="Calcula tiempo recuperado según tu volumen de ventas y equipo."
-      >
-        <RoiCalculator />
-      </MobileSectionDisclosure>
+      <ClientsCarousel />
       <Testimonials />
       <MobileSectionDisclosure
         title="Seguridad y continuidad"

@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getWhatsAppUrl } from "@/config/company";
-import { X, Send, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Sparkles } from "lucide-react";
 import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import Image from "next/image";
+import styles from "./FloatingWhatsApp.module.css";
 
 export function FloatingWhatsApp() {
   const [isOpen, setIsOpen] = useState(false);
@@ -105,11 +106,22 @@ export function FloatingWhatsApp() {
         </div>
       )}
 
+      {!isOpen && (
+        <span
+          aria-hidden="true"
+          data-whatsapp-prompt=""
+          className={styles.mobilePrompt}
+        >
+          <MessageCircle className={styles.promptIcon} aria-hidden="true" />
+          ¡Chatea con nosotros!
+        </span>
+      )}
+
       {/* Main Floating Trigger Button with official WhatsApp Logo & Brand Colors */}
       <button
         ref={triggerRef}
-        onClick={() => setIsOpen(!isOpen)}
-        className="group relative flex min-h-12 min-w-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] p-3 text-white shadow-lg shadow-[#25D366]/30 transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#20bd5a] hover:shadow-xl hover:shadow-[#25D366]/40 hover:-translate-y-0.5 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-emerald-300 md:px-4 md:py-3"
+        onClick={() => setIsOpen((current) => !current)}
+        className={`${styles.trigger} group relative flex min-h-12 min-w-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#20bd5a] hover:shadow-xl hover:shadow-[#25D366]/40 hover:-translate-y-0.5 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-emerald-300`}
         aria-label={isOpen ? "Cerrar" : "Consultar por WhatsApp"}
         aria-expanded={isOpen}
         aria-controls="whatsapp-panel"
@@ -121,7 +133,7 @@ export function FloatingWhatsApp() {
             <WhatsAppIcon className="w-6 h-6 fill-current text-white" />
           )}
         </span>
-        <span className="hidden pr-1 text-sm font-bold tracking-tight text-white md:inline-block">
+        <span className={`${styles.desktopLabel} pr-1 text-sm font-bold tracking-tight text-white`}>
           {isOpen ? "Cerrar" : "Consultar por WhatsApp"}
         </span>
       </button>

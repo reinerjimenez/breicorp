@@ -40,8 +40,8 @@ export function BusinessServicesPreview() {
           </article>
 
           <article className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
-            <div className="grid h-full sm:grid-cols-[minmax(0,1fr)_minmax(190px,0.8fr)] lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(210px,0.85fr)]">
-              <div className="p-7 sm:p-9">
+            <div className="flex h-full flex-col">
+              <div className="p-7 sm:p-8">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
                   <BriefcaseBusiness className="h-6 w-6" aria-hidden="true" />
                 </span>
@@ -63,14 +63,14 @@ export function BusinessServicesPreview() {
                 </Link>
               </div>
 
-              <div className="relative min-h-[260px] bg-orange-50 sm:min-h-full lg:min-h-[300px] xl:min-h-full">
+              <div className="relative min-h-[260px] w-full shrink-0 bg-white lg:min-h-[300px]">
                 <Image
                   src="/images/home/breicorp-asesoria-empresarial-mypes.webp"
                   alt="Asesoría empresarial para micro y medianas empresas de BREICORP"
                   fill
                   loading="lazy"
-                  sizes="(max-width: 639px) 92vw, (max-width: 1023px) 42vw, (max-width: 1279px) 45vw, 22vw"
-                  className="object-contain object-bottom p-2"
+                  sizes="(max-width: 1023px) 92vw, (max-width: 1535px) 45vw, 620px"
+                  className="object-contain object-center p-2"
                 />
               </div>
             </div>

@@ -1,8 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { seoRedirects } from "../src/config/seoRedirects.ts";
+import { demoRedirect, seoRedirects } from "../src/config/seoRedirects.ts";
+
+const demoLoginUrl = "https://demo.breicorp.pe/login";
+const complaintsBookUrl = "https://breicorpperu.breicorp.pe/reclamos";
 
 const expectedRedirects = new Map([
+  ["/libro-reclamaciones", complaintsBookUrl],
   ["/plataforma", "/producto"],
   ["/modulos", "/producto"],
   ["/app-movil", "/producto#movilidad"],
@@ -28,8 +32,16 @@ const expectedRedirects = new Map([
   ["/facturacion-para-juridicos", "/software-empresas-peru"],
   ["/facturacion-para-talleres", "/software-empresas-peru"],
   ["/facturacion-para-aviolas", "/software-empresas-peru"],
-  ["/login", "/demo"],
+  ["/login", demoLoginUrl],
 ]);
+
+test("the retired demo page redirects permanently and directly to the demo login", () => {
+  assert.deepEqual(demoRedirect, {
+    source: "/demo",
+    destination: demoLoginUrl,
+    permanent: true,
+  });
+});
 
 test("the historical URL matrix maps directly to final semantic destinations", () => {
   assert.equal(seoRedirects.length, expectedRedirects.size);
@@ -51,7 +63,7 @@ test("redirects are unique and cannot form internal chains", () => {
   }
 });
 
-test("all 26 historical redirects have an explicit treatment", () => {
-  assert.equal(seoRedirects.length, 26);
-  assert.equal(expectedRedirects.size, 26);
+test("all 27 historical redirects have an explicit treatment", () => {
+  assert.equal(seoRedirects.length, 27);
+  assert.equal(expectedRedirects.size, 27);
 });

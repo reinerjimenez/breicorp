@@ -178,9 +178,9 @@ const relatedLinks = [
     description: "Revisa el alcance comercial de los planes publicados.",
   },
   {
-    href: "/demo",
+    href: company.demo.url,
     title: "Entorno de demostración",
-    description: "Consulta las credenciales públicas y explora datos de prueba.",
+    description: "Abre el entorno de demostración y explora datos de prueba.",
   },
   {
     href: "/contacto",
@@ -213,7 +213,10 @@ export default function SoftwareEmpresarialTingoMariaPage() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
             <Link
-              href="/demo"
+              href={company.demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics-event="demo_open"
               className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-600 bg-slate-900 px-6 py-3 text-sm font-bold text-white transition-colors hover:border-orange-400 hover:text-orange-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
             >
               Ver demo

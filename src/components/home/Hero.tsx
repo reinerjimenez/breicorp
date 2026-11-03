@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import { getWhatsAppUrl } from "@/config/company";
+import { company, getWhatsAppUrl } from "@/config/company";
 
 export function Hero() {
   return (
@@ -56,7 +56,9 @@ export function Hero() {
               </Link>
 
               <Link
-                href="/demo"
+                href={company.demo.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-analytics-event="demo_open"
                 className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-600 bg-transparent px-6 py-3.5 text-base font-semibold text-slate-100 transition-colors hover:bg-slate-800/70 sm:w-auto"
               >

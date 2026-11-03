@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { seoRedirects } from "./src/config/seoRedirects";
+import { demoRedirect, seoRedirects } from "./src/config/seoRedirects";
 
 const nextConfig: NextConfig = {
   images: {
@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 86400,
   },
   async redirects() {
-    return [...seoRedirects];
+    return [demoRedirect, ...seoRedirects];
   },
   async headers() {
     const isProductionBuild =

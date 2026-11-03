@@ -48,7 +48,7 @@ export default function NotFound() {
             <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
           <Link
-            href="/demo"
+            href="/contacto"
             className="inline-flex min-h-11 items-center justify-center rounded-xl px-5 py-3 text-sm font-bold text-orange-300 transition-colors hover:bg-slate-900 hover:text-orange-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             Solicitar demo

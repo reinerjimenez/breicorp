@@ -4,12 +4,18 @@
  * Solo se incluyen equivalencias semánticas verificables. Las rutas ambiguas
  * conservan su 404 hasta que exista una decisión editorial documentada.
  */
-import { company } from "./company";
+import { complaintsBookUrl, demoLoginUrl } from "./externalUrls.js";
+
+export const demoRedirect = {
+  source: "/demo",
+  destination: demoLoginUrl,
+  permanent: true,
+} as const;
 
 export const seoRedirects = [
   {
     source: "/libro-reclamaciones",
-    destination: company.complaintsBookUrl,
+    destination: complaintsBookUrl,
     permanent: true,
   },
   { source: "/plataforma", destination: "/producto", permanent: true },
@@ -38,5 +44,5 @@ export const seoRedirects = [
   { source: "/facturacion-para-talleres", destination: "/software-empresas-peru", permanent: true },
   // SEO_FUTURE_VERTICAL_AVICOLAS: evaluar demanda en Search Console antes de crear una landing específica.
   { source: "/facturacion-para-aviolas", destination: "/software-empresas-peru", permanent: true },
-  { source: "/login", destination: "/demo", permanent: true },
+  { source: "/login", destination: demoLoginUrl, permanent: true },
 ] as const;

@@ -269,7 +269,10 @@ export function Header() {
             {/* Desktop Action CTAs */}
             <div className="hidden xl:flex items-center gap-3">
               <Link
-                href="/demo"
+                href={company.demo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-event="demo_open"
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
               >
                 <ExternalLink className="w-4 h-4 text-slate-400" />
@@ -392,7 +395,10 @@ export function Header() {
                 </a>
 
                 <Link
-                  href="/demo"
+                  href={company.demo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-analytics-event="demo_open"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
                 >

@@ -9,6 +9,8 @@
  * documental antes de publicar en producción.
  */
 
+import { complaintsBookUrl, demoLoginUrl } from "./externalUrls.js";
+
 const headquarters = {
   streetAddress: "Av. Tito Jaime 642",
   addressLocality: "Tingo María",
@@ -16,8 +18,6 @@ const headquarters = {
   addressCountry: "PE",
   countryName: "Perú",
 } as const;
-
-const complaintsBookUrl = "https://breicorpperu.breicorp.pe/reclamos";
 
 export const company = {
   companyName: "BREICORP",
@@ -76,15 +76,9 @@ export const company = {
    * La web actual menciona AES-256, ISO 27001 sin respaldo visible.
    */
   verifiedCertifications: [] as string[],
-  /**
-   * Entorno de demostración pública.
-   * Estas credenciales son PÚBLICAS: se muestran abiertamente en /demo.
-   * No usar en autenticación real, cookies, localStorage, ni APIs.
-   */
+  /** Acceso público al entorno de demostración con cuenta demo integrada. */
   demo: {
-    url: "https://demo.breicorp.pe",
-    email: "demo@breicorp.pe",
-    password: "123456",
+    url: demoLoginUrl,
   },
 } as const;
 

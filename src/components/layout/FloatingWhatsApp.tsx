@@ -110,7 +110,7 @@ export function FloatingWhatsApp() {
       <button
         ref={triggerRef}
         onClick={() => setIsOpen((current) => !current)}
-        className={`${styles.trigger} group relative flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] text-white shadow-[0_6px_18px_rgba(15,23,42,0.16)] transition-[background-color,box-shadow,transform] duration-150 hover:bg-[#20bd5a] hover:shadow-[0_8px_22px_rgba(15,23,42,0.18)] active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-emerald-300`}
+        className={`${styles.trigger} group relative flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] text-white transition-[background-color,box-shadow,transform] duration-150 hover:bg-[#20bd5a] active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-emerald-300`}
         aria-label={isOpen ? "Cerrar" : "Consultar por WhatsApp"}
         aria-expanded={isOpen}
         aria-controls="whatsapp-panel"

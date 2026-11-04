@@ -2,6 +2,7 @@
   width: 3.25rem;
   height: 3.25rem;
   padding: 0.8125rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.16);
 }
 
 .triggerIcon {
@@ -11,6 +12,47 @@
 
 .desktopLabel {
   display: none;
+}
+
+@keyframes whatsapp-attention {
+  0%,
+  12%,
+  100% {
+    translate: 0 0;
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.16),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+
+  4% {
+    translate: 0 -2px;
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.16),
+      0 0 0 0 rgba(37, 211, 102, 0.28);
+  }
+
+  10% {
+    translate: 0 0;
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.16),
+      0 0 0 8px rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .trigger {
+    animation: whatsapp-attention 10s ease-out 5s infinite;
+  }
+
+  .trigger[aria-expanded="true"] {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trigger {
+    animation: none;
+  }
 }
 
 @media (min-width: 768px) {

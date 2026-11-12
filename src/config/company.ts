@@ -102,7 +102,7 @@ export const siteMetadata = {
   siteName: "BREICORP",
   siteUrl: `https://${company.domain}`,
   locale: "es_PE",
-  ogImage: "/og-breicorp.png",
+  ogImage: "https://breicorp.com.pe/images/og/breicorp-social-preview.jpg",
   twitterHandle: "", // [VERIFICAR_TWITTER]
 };
 
@@ -184,6 +184,7 @@ export function createPageMetadata({
           url: siteMetadata.ogImage,
           width: 1200,
           height: 630,
+          type: "image/jpeg",
           alt: `${siteMetadata.siteName} — Software empresarial`,
         },
       ],

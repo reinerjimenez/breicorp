@@ -57,6 +57,7 @@ export const metadata: Metadata = {
         url: siteMetadata.ogImage,
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "BREICORP — Software empresarial para empresas peruanas",
       },
     ],

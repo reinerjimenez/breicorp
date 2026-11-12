@@ -5,14 +5,14 @@ import { company } from "@/config/company";
 
 export function MobileAppSection() {
   return (
-    <section className="defer-render overflow-hidden border-b border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-12 text-white sm:py-20" aria-labelledby="mobile-app-title">
+    <section className="defer-render overflow-hidden border-b border-neutral-900 bg-gradient-to-br from-black via-neutral-950 to-black py-12 text-white sm:py-20" aria-labelledby="mobile-app-title">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
         <div className="space-y-6 lg:col-span-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-orange-400">App móvil BREICORP</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-orange-500">App móvil BREICORP</p>
           <h2 id="mobile-app-title" className="text-3xl font-black tracking-tight sm:text-4xl">
             Gestiona tu negocio desde cualquier lugar
           </h2>
-          <p className="max-w-2xl leading-8 text-slate-300">
+          <p className="max-w-2xl leading-8 text-neutral-300">
             Consulta ventas, clientes, productos y reportes desde la aplicación móvil de BREICORP, como complemento de la plataforma empresarial.
           </p>
 
@@ -22,7 +22,7 @@ export function MobileAppSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Descargar app BREICORP para Android en Google Play"
-              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-950 shadow-sm transition-colors hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 sm:w-auto"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl bg-white px-5 py-3 text-sm font-bold text-black shadow-sm transition-colors hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 sm:w-auto"
             >
               <Play className="h-5 w-5 fill-current" aria-hidden="true" />
               <span>Descargar en Google Play</span>
@@ -33,7 +33,7 @@ export function MobileAppSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Descargar app BREICORP para iOS en App Store"
-              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl border border-slate-600 bg-slate-900 px-5 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:border-slate-400 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 sm:w-auto"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl border border-neutral-700 bg-neutral-900 px-5 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:border-neutral-500 hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 sm:w-auto"
             >
               <Apple className="h-5 w-5" aria-hidden="true" />
               <span>Descargar en App Store</span>
@@ -41,7 +41,7 @@ export function MobileAppSection() {
             </a>
           </div>
 
-          <Link href="/producto#movilidad" className="inline-flex min-h-11 items-center gap-2 rounded-xl px-1 text-sm font-bold text-orange-300 transition-colors hover:text-orange-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-300">
+          <Link href="/producto#movilidad" className="inline-flex min-h-11 items-center gap-2 rounded-xl px-1 text-sm font-bold text-orange-500 transition-colors hover:text-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-300">
             Conocer la experiencia móvil <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>

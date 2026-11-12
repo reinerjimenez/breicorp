@@ -42,11 +42,11 @@ export function FloatingWhatsApp() {
               <div className="relative">
                 <div className="w-10 h-10 rounded-full overflow-hidden bg-white shadow-inner flex items-center justify-center border-2 border-white/80">
                   <Image
-                    src="/logo-breicorp.webp"
+                    src="/nuevo-logo-breicorp.webp"
                     alt="BREICORP"
                     width={40}
                     height={40}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-[#25D366] border-2 border-white rounded-full"></span>

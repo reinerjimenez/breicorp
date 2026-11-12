@@ -1,4 +1,4 @@
-﻿import { PageHeader } from "@/components/shared/PageHeader";
+import { PageHeader } from "@/components/shared/PageHeader";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { SocialLinks } from "@/components/shared/SocialLinks";
 import { company, createPageMetadata } from "@/config/company";
@@ -72,7 +72,7 @@ export default function EmpresaPage() {
                   </div>
 
                   <div className="space-y-1">
-                    <div className="font-bold text-cyan-400 text-sm">2. Rigor tributario y normativo</div>
+                    <div className="font-bold text-orange-400 text-sm">2. Rigor tributario y normativo</div>
                     <p className="text-slate-300">
                       Diseñamos los flujos de comprobantes considerando las disposiciones aplicables de SUNAT y la operación de empresas peruanas.
                     </p>

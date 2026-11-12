@@ -114,7 +114,7 @@ export default function ContactoPage() {
 
               {/* What happens next box */}
               <div className="bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 space-y-3">
-                <div className="font-bold text-sm text-cyan-300">
+                <div className="font-bold text-sm text-orange-300">
                   ¿Qué ocurre tras solicitar una demo?
                 </div>
                 <div className="space-y-2 text-xs text-orange-100">

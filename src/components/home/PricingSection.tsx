@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -40,7 +40,7 @@ export function PricingSection() {
             <button
               type="button"
               onClick={() => setBillingCycle(billingCycle === "monthly" ? "annual" : "monthly")}
-              className="relative inline-flex h-7 w-14 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 bg-slate-900"
+              className="relative inline-flex h-7 w-14 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 bg-black"
               role="switch"
               aria-checked={billingCycle === "annual"}
               aria-label="Alternar entre pago mensual y anual"
@@ -84,12 +84,12 @@ export function PricingSection() {
                 key={plan.id}
                 className={`relative flex w-[84vw] max-w-[340px] shrink-0 snap-center flex-col justify-between rounded-3xl p-6 transition-[box-shadow,border-color,transform] duration-200 sm:p-7 md:w-auto md:max-w-none ${
                   plan.recommended
-                    ? "bg-slate-900 text-white shadow-2xl ring-2 ring-orange-500 scale-[1.02] z-10"
+                    ? "bg-black text-white shadow-2xl ring-2 ring-orange-500 scale-[1.02] z-10"
                     : "bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-md"
                 }`}
               >
                 {plan.recommended && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
                     Recomendado
                   </div>
                 )}
@@ -163,7 +163,7 @@ export function PricingSection() {
                       <div key={i} className="flex items-start gap-2 text-xs">
                         <Check
                           className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
-                            plan.recommended ? "text-cyan-400" : "text-orange-700"
+                            plan.recommended ? "text-orange-500" : "text-orange-500"
                           }`}
                         />
                         <span
@@ -210,7 +210,7 @@ export function PricingSection() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => window.dispatchEvent(new CustomEvent("breicorp:analytics", { detail: { name: "whatsapp_click" } }))}
-              className="text-orange-700 font-bold hover:underline"
+              className="text-orange-500 font-bold hover:underline"
             >
               Habla directamente con un asesor comercial por WhatsApp →
             </a>

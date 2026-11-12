@@ -41,7 +41,7 @@ const sectorLinks = [
 
 function FooterHeading({ children }: { children: ReactNode }) {
   return (
-    <h3 className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-slate-200">
+    <h3 className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-neutral-200">
       {children}
     </h3>
   );
@@ -62,7 +62,7 @@ function FooterNavLink({
       className={
         featured
           ? "inline-flex min-h-11 items-center rounded-md py-2 text-sm font-semibold text-orange-300 transition-colors duration-150 hover:text-orange-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 lg:min-h-0 lg:py-1.5"
-          : "inline-flex min-h-11 items-center rounded-md py-2 text-sm text-slate-400 transition-colors duration-150 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 lg:min-h-0 lg:py-1.5"
+          : "inline-flex min-h-11 items-center rounded-md py-2 text-sm text-neutral-400 transition-colors duration-150 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 lg:min-h-0 lg:py-1.5"
       }
     >
       {children}
@@ -78,10 +78,10 @@ function ContactItem({
   children: ReactNode;
 }) {
   return (
-    <div className="flex min-h-11 items-start gap-3 rounded-lg py-2 text-sm leading-5 text-slate-300">
+    <div className="flex min-h-11 items-start gap-3 rounded-lg py-2 text-sm leading-5 text-neutral-300">
       <span
         aria-hidden="true"
-        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-orange-400"
+        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-neutral-800 bg-neutral-900 text-orange-500"
       >
         {icon}
       </span>
@@ -94,9 +94,15 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 pb-0 pt-12 text-slate-300 md:pb-12 md:pt-16">
+    <footer
+      className="border-t border-neutral-900 bg-black pb-0 pt-12 text-neutral-300 md:pb-12 md:pt-16"
+      style={{
+        backgroundColor: "#101010",
+        borderTopColor: "rgba(255, 255, 255, 0.12)",
+      }}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 border-b border-slate-800 pb-12 md:grid-cols-2 lg:grid-cols-[1.2fr_0.85fr_1.05fr_1.15fr] lg:gap-x-10">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-12 border-b border-neutral-900 pb-12 md:grid-cols-2 lg:grid-cols-[1.2fr_0.85fr_1.05fr_1.15fr] lg:gap-x-10">
           <section aria-labelledby="footer-brand-heading" className="order-1">
             <h2 id="footer-brand-heading" className="sr-only">
               Información corporativa de BREICORP
@@ -107,49 +113,49 @@ export function Footer() {
               aria-label="Ir al inicio de BREICORP"
               className="group inline-flex min-h-11 items-center gap-3 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400"
             >
-              <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-slate-700 bg-white shadow-sm">
+              <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-neutral-800 bg-white shadow-sm">
                 <Image
-                  src="/logo-breicorp.webp"
+                  src="/nuevo-logo-breicorp.webp"
                   alt=""
                   width={48}
                   height={48}
                   sizes="48px"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                 />
               </span>
               <span className="flex flex-col">
                 <span className="text-xl font-black tracking-tight text-white transition-colors duration-150 group-hover:text-orange-300">
                   BREICORP
                 </span>
-                <span className="text-xs font-medium text-slate-400">
+                <span className="text-xs font-medium text-neutral-400">
                   Tecnología y gestión empresarial
                 </span>
               </span>
             </Link>
 
-            <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">
+            <p className="mt-5 max-w-sm text-sm leading-6 text-neutral-400">
               Tecnología y servicios profesionales para ayudar a empresas peruanas a
               digitalizar, ordenar y gestionar su operación.
             </p>
 
-            <dl className="mt-5 max-w-sm overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 text-xs shadow-sm">
-              <div className="grid grid-cols-[auto_1fr] gap-3 border-b border-slate-800 px-4 py-3">
-                <dt className="text-slate-500">Razón social</dt>
+            <dl className="mt-5 max-w-sm overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/70 text-xs shadow-sm">
+              <div className="grid grid-cols-[auto_1fr] gap-3 border-b border-neutral-800 px-4 py-3">
+                <dt className="text-neutral-500">Razón social</dt>
                 <dd className="text-right font-semibold text-white">{company.legalName}</dd>
               </div>
-              <div className="grid grid-cols-[auto_1fr] gap-3 border-b border-slate-800 px-4 py-3">
-                <dt className="text-slate-500">RUC</dt>
+              <div className="grid grid-cols-[auto_1fr] gap-3 border-b border-neutral-800 px-4 py-3">
+                <dt className="text-neutral-500">RUC</dt>
                 <dd className="text-right font-semibold text-white">{company.ruc}</dd>
               </div>
               <div className="grid grid-cols-[auto_1fr] gap-3 px-4 py-3">
-                <dt className="text-slate-500">Trayectoria</dt>
+                <dt className="text-neutral-500">Trayectoria</dt>
                 <dd className="text-right font-semibold text-emerald-400">
                   Desde {company.foundationYear} en Perú
                 </dd>
               </div>
             </dl>
 
-            <div className="mt-4 flex max-w-sm items-start gap-2.5 rounded-xl border border-emerald-900/50 bg-emerald-950/20 px-3.5 py-3 text-xs leading-5 text-slate-400">
+            <div className="mt-4 flex max-w-sm items-start gap-2.5 rounded-xl border border-emerald-900/50 bg-emerald-950/20 px-3.5 py-3 text-xs leading-5 text-neutral-400">
               <ShieldCheck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
               <span>Conforme a normativa SUNAT para comprobantes de pago electrónicos.</span>
             </div>
@@ -275,8 +281,8 @@ export function Footer() {
               />
             </a>
 
-            <div className="mt-5 rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-slate-200">
+            <div className="mt-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-neutral-200">
                 Síguenos
               </p>
               <SocialLinks tone="dark" />
@@ -284,7 +290,7 @@ export function Footer() {
           </section>
         </div>
 
-        <div className="flex flex-col gap-4 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between md:py-8">
+        <div className="flex flex-col gap-4 py-6 text-xs text-neutral-500 md:flex-row md:items-center md:justify-between md:py-8">
           <div className="space-y-1">
             <p>© {currentYear} {company.legalName}. Todos los derechos reservados.</p>
             <p>Hecho para la competitividad empresarial en Perú.</p>
@@ -295,7 +301,7 @@ export function Footer() {
               <li>
                 <Link
                   href={company.legalLinks.privacyPolicy}
-                  className="inline-flex min-h-11 items-center rounded-md transition-colors duration-150 hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 md:min-h-0 md:py-2"
+                  className="inline-flex min-h-11 items-center rounded-md transition-colors duration-150 hover:text-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 md:min-h-0 md:py-2"
                 >
                   Política de privacidad
                 </Link>
@@ -303,13 +309,28 @@ export function Footer() {
               <li>
                 <Link
                   href={company.legalLinks.termsOfService}
-                  className="inline-flex min-h-11 items-center rounded-md transition-colors duration-150 hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 md:min-h-0 md:py-2"
+                  className="inline-flex min-h-11 items-center rounded-md transition-colors duration-150 hover:text-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 md:min-h-0 md:py-2"
                 >
                   Términos de servicio
                 </Link>
               </li>
             </ul>
           </nav>
+        </div>
+
+        {/* Developer credit */}
+        <div className="border-t border-neutral-900 py-3 text-center">
+          <p className="text-[11px] text-neutral-500">
+            Desarrollo web por{" "}
+            <a
+              href="https://www.linkedin.com/in/reiner-jairo-jim%C3%A9nez-huaman-9234a9388"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-400 transition-colors duration-150 hover:text-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 rounded"
+            >
+              Reiner Jairo Jiménez
+            </a>
+          </p>
         </div>
       </div>
     </footer>

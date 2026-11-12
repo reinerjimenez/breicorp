@@ -1,4 +1,4 @@
-﻿import { PageHeader } from "@/components/shared/PageHeader";
+import { PageHeader } from "@/components/shared/PageHeader";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { confirmedCaseStudy } from "@/config/caseStudies";
 import { createPageMetadata } from "@/config/company";
@@ -24,8 +24,8 @@ export default function CasosExitoPage() {
       <section className="border-b border-slate-200 bg-white py-20 text-slate-900">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <article className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
-            <div className="border-b border-slate-200 bg-slate-950 p-8 text-white sm:p-10">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950 px-3 py-1 text-xs font-bold text-orange-200">
+            <div className="border-b border-neutral-900 bg-black p-8 text-white sm:p-10">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs font-bold text-orange-200">
                 <ShieldCheck className="h-3.5 w-3.5" />
                 Identidad del cliente protegida
               </div>

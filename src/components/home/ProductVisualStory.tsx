@@ -42,17 +42,17 @@ export function ProductVisualStory() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 px-4 py-8 text-white shadow-xl sm:px-8 sm:py-10 lg:px-12">
+        <div className="overflow-hidden rounded-3xl border border-neutral-800 bg-black px-4 py-8 text-white shadow-xl sm:px-8 sm:py-10 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-orange-400">Operación conectada</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-orange-500">Operación conectada</p>
             <h3 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">Un solo flujo para toda tu operación</h3>
-            <p className="mt-4 leading-7 text-slate-300">
+            <p className="mt-4 leading-7 text-neutral-300">
               Desde la venta hasta los reportes, BREICORP conecta facturación, inventario, guías y control operativo en una sola plataforma.
             </p>
           </div>
-          <div className="relative mx-auto mt-8 aspect-[43/24] w-full max-w-6xl overflow-hidden rounded-2xl bg-slate-900">
+          <div className="relative mx-auto mt-8 aspect-[43/24] w-full max-w-6xl overflow-hidden rounded-2xl bg-neutral-950">
             <Image
-              src="/images/home/breicorp-flujo-empresarial-integrado.webp"
+              src="/images/home/flujo-empresarial.webp"
               alt="Flujo integrado de ventas, facturación, inventario, guías y reportes en BREICORP"
               fill
               loading="lazy"

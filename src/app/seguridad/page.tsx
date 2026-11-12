@@ -1,4 +1,4 @@
-﻿import { PageHeader } from "@/components/shared/PageHeader";
+import { PageHeader } from "@/components/shared/PageHeader";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { ShieldCheck, Lock, Database, Server, UserCheck, FileCheck } from "lucide-react";
 import { createPageMetadata } from "@/config/company";
@@ -40,7 +40,7 @@ export default function SeguridadPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
-              <UserCheck className="w-8 h-8 text-cyan-600" />
+              <UserCheck className="w-8 h-8 text-orange-500" />
               <h3 className="font-bold text-lg text-slate-900">Control de Accesos por Rol</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Asigna privilegios específicos a cada trabajador. Restringe a los cajeros el acceso a reportes de ganancias o costo de compra de mercadería.
@@ -48,7 +48,7 @@ export default function SeguridadPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
-              <FileCheck className="w-8 h-8 text-indigo-600" />
+              <FileCheck className="w-8 h-8 text-orange-500" />
               <h3 className="font-bold text-lg text-slate-900">Custodia Digital SUNAT</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Conservamos tus archivos XML firmados y CDRs durante el período legal exigido por el Código Tributario peruano para tu completa tranquilidad en auditorías.
@@ -56,7 +56,7 @@ export default function SeguridadPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
-              <Server className="w-8 h-8 text-purple-600" />
+              <Server className="w-8 h-8 text-orange-500" />
               <h3 className="font-bold text-lg text-slate-900">Continuidad Operativa</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Arquitectura de servidores en la nube con balanceo de carga para responder rápidamente en tus días de mayor venta comercial (Navidad, Día de la Madre, campañas).

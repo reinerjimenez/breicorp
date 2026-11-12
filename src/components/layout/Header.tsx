@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -93,17 +93,17 @@ export function Header() {
       </a>
 
       {/* Top micro-bar for credibility & direct contact */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 hidden md:block border-b border-slate-800">
+      <div className="bg-black text-neutral-300 text-xs py-1.5 px-4 hidden md:block border-b border-neutral-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-slate-300">
+            <span className="flex items-center gap-1.5 text-neutral-300">
               <ShieldCheck className="w-3.5 h-3.5 text-orange-400" />
               <span>Software para facturación electrónica y procesos SUNAT</span>
             </span>
-            <span className="text-slate-600">|</span>
-            <span className="text-slate-400">RUC: {company.ruc} ({company.legalName})</span>
+            <span className="text-neutral-600">|</span>
+            <span className="text-neutral-400">RUC: {company.ruc} ({company.legalName})</span>
           </div>
-          <div className="flex items-center gap-5 text-slate-300">
+          <div className="flex items-center gap-5 text-neutral-300">
             <a
               href={`tel:${company.phone.replace(/\s+/g, "")}`}
               className="hover:text-white transition-colors flex items-center gap-1"
@@ -111,8 +111,8 @@ export function Header() {
               <PhoneCall className="w-3 h-3 text-emerald-400" />
               <span>Central: {company.phone}</span>
             </a>
-            <span className="text-slate-600">|</span>
-            <span className="text-slate-400">{company.businessHours}</span>
+            <span className="text-neutral-600">|</span>
+            <span className="text-neutral-400">{company.businessHours}</span>
           </div>
         </div>
       </div>
@@ -134,11 +134,11 @@ export function Header() {
             >
               <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-xl shadow-sm transition-transform duration-200 group-hover:scale-105 xl:h-10 xl:w-10">
                 <Image
-                  src="/logo-breicorp.webp"
+                  src="/nuevo-logo-breicorp.webp"
                   alt=""
                   width={40}
                   height={40}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   priority
                 />
               </div>
@@ -281,7 +281,7 @@ export function Header() {
 
               <Link
                 href="/contacto"
-                className="inline-flex min-h-11 items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 active:scale-[0.98] rounded-xl shadow-sm hover:shadow-md transition-[transform,box-shadow] duration-150"
+                className="inline-flex min-h-11 items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-orange-500 hover:bg-orange-600 active:scale-[0.98] rounded-xl shadow-sm hover:shadow-md transition-[transform,box-shadow,background-color] duration-150"
               >
                 <span>Solicitar demo</span>
                 <ArrowRight className="w-4 h-4" />
@@ -375,7 +375,7 @@ export function Header() {
               <div role="group" className="mt-4 space-y-2.5 border-t border-slate-200 pt-4" aria-label="Acciones rápidas">
                 <Link
                   href="/contacto"
-                  className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-orange-700 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-orange-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+                  className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-orange-500 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span>Solicitar demo</span>

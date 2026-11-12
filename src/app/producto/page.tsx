@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { company, createPageMetadata } from "@/config/company";
@@ -223,7 +223,7 @@ export default function ProductPage() {
                 <div className={`lg:col-span-5 ${isReversed ? "lg:order-1" : ""}`}>
                   <div className="bg-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-slate-800 space-y-4">
                     <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                      <span className="text-xs font-mono text-cyan-300">MOD-{m.id.toUpperCase()}</span>
+                      <span className="text-xs font-mono text-orange-300">MOD-{m.id.toUpperCase()}</span>
                       <span className="text-[11px] bg-slate-900/80 text-orange-300 px-2 py-0.5 rounded border border-orange-700/60 font-medium">
                         Cloud 2026
                       </span>
@@ -267,7 +267,7 @@ export default function ProductPage() {
               <div className="text-xs text-slate-400">Servidores de baja latencia con escalabilidad automática</div>
             </div>
             <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-2">
-              <Database className="w-6 h-6 text-cyan-400 mx-auto" />
+              <Database className="w-6 h-6 text-orange-400 mx-auto" />
               <div className="text-sm font-bold">Bases de Datos Aisladas</div>
               <div className="text-xs text-slate-400">Controles de acceso orientados a proteger la privacidad de tu negocio</div>
             </div>

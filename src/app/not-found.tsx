@@ -15,7 +15,7 @@ export default function NotFound() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(234,88,12,0.18),transparent_36%)]" />
       <div className="mx-auto max-w-3xl text-center">
         <Image
-          src="/logo-breicorp.webp"
+          src="/nuevo-logo-breicorp.webp"
           alt="BREICORP"
           width={64}
           height={64}

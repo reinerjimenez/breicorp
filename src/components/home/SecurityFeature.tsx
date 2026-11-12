@@ -1,4 +1,4 @@
-﻿import {
+import {
   ShieldCheck,
   Lock,
   DatabaseBackup,
@@ -49,17 +49,17 @@ export function SecurityFeature() {
   ];
 
   return (
-    <section className="defer-render border-b border-slate-800 bg-slate-950 py-12 text-white sm:py-20">
+    <section className="defer-render border-b border-neutral-850 bg-black py-12 text-white sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-8 max-w-3xl space-y-4 text-center sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950 border border-orange-700/60 text-orange-300 text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-orange-500/60 text-orange-300 text-xs font-bold uppercase tracking-wider">
             <Lock className="w-3.5 h-3.5" />
             <span>Seguridad y Continuidad Operativa</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
             Medidas de protección para la información financiera y comercial de tu empresa
           </h2>
-          <p className="text-base sm:text-lg text-slate-300">
+          <p className="text-base sm:text-lg text-neutral-300">
             En un negocio no hay margen para perder datos de ventas ni arriesgarse a contingencias con SUNAT.
             Respaldamos tu operación con infraestructura tecnológica sólida.
           </p>
@@ -71,13 +71,13 @@ export function SecurityFeature() {
             return (
               <div
                 key={idx}
-                className="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition-colors space-y-3"
+                className="bg-neutral-900/90 rounded-2xl p-6 border border-neutral-800 hover:border-neutral-700 transition-colors space-y-3"
               >
-                <div className="w-10 h-10 rounded-xl bg-slate-950/80 border border-slate-700/60 flex items-center justify-center text-orange-400">
+                <div className="w-10 h-10 rounded-xl bg-black/80 border border-neutral-700/60 flex items-center justify-center text-orange-500">
                   <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-white">{pillar.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-neutral-400 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
@@ -88,7 +88,7 @@ export function SecurityFeature() {
         <div className="mt-12 text-center">
           <Link
             href="/seguridad"
-            className="inline-flex items-center gap-2 text-sm font-bold text-orange-400 hover:text-orange-300 underline underline-offset-4"
+            className="inline-flex items-center gap-2 text-sm font-bold text-orange-500 hover:text-orange-400 underline underline-offset-4"
           >
             <span>Conocer más sobre nuestras medidas de seguridad y respaldos</span>
             <span>→</span>

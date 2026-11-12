@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -44,25 +44,25 @@ export function RoiCalculator() {
   } = calculateOperationalSavings({ salesPerDay, users: employees, currentMethod });
 
   return (
-    <section className="defer-render relative overflow-hidden border-b border-slate-800 bg-slate-900 py-12 text-white sm:py-20">
+    <section className="defer-render relative overflow-hidden border-b border-neutral-900 bg-black py-12 text-white sm:py-20">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950 border border-orange-700/60 text-orange-300 text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-orange-500/60 text-orange-300 text-xs font-bold uppercase tracking-wider">
             <Calculator className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Calculadora de Impacto Operativo</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
             Estima el impacto operativo de reducir tareas manuales
           </h2>
-          <p className="text-base sm:text-lg text-slate-300">
+          <p className="text-base sm:text-lg text-neutral-300">
             Ajusta los supuestos para obtener una referencia ilustrativa. El resultado no constituye una promesa de ahorro para tu operación.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-950 rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-black rounded-3xl p-6 sm:p-10 border border-neutral-800 shadow-2xl">
           {/* Controls column */}
           <div className="lg:col-span-6 space-y-6">
             {/* Control 1: Current method */}
@@ -166,53 +166,53 @@ export function RoiCalculator() {
           </div>
 
           {/* Results column */}
-          <div aria-live="polite" className="lg:col-span-6 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <div aria-live="polite" className="lg:col-span-6 bg-neutral-900/90 rounded-2xl p-6 sm:p-8 border border-neutral-800 space-y-6">
             <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">
               Ahorro operativo mensual proyectado:
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="min-h-32 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-                <div className="flex items-center gap-2 text-slate-300 text-xs mb-1">
-                  <Clock className="w-4 h-4 text-cyan-400" aria-hidden="true" />
+              <div className="min-h-32 bg-black/80 p-4 rounded-xl border border-neutral-800">
+                <div className="flex items-center gap-2 text-neutral-300 text-xs mb-1">
+                  <Clock className="w-4 h-4 text-orange-500" aria-hidden="true" />
                   <span>Tiempo recuperado por operaciones</span>
                 </div>
-                <div className="text-3xl font-black tabular-nums text-cyan-300">
+                <div className="text-3xl font-black tabular-nums text-white">
                   ~{hoursFormatter.format(transactionHoursSaved)} hrs
                 </div>
-                <div className="text-[11px] text-slate-300 mt-1">
+                <div className="text-[11px] text-neutral-400 mt-1">
                   {monthlyTransactions} operaciones × {minutesSavedPerTransaction} min
                 </div>
               </div>
 
-              <div className="min-h-32 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-                <div className="flex items-center gap-2 text-slate-300 text-xs mb-1">
+              <div className="min-h-32 bg-black/80 p-4 rounded-xl border border-neutral-800">
+                <div className="flex items-center gap-2 text-neutral-300 text-xs mb-1">
                   <Users className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                   <span>Tiempo administrativo recuperado</span>
                 </div>
                 <div className="text-3xl font-black tabular-nums text-emerald-300">
                   ~{hoursFormatter.format(administrativeHoursSaved)} hrs
                 </div>
-                <div className="text-[11px] text-slate-300 mt-1">
+                <div className="text-[11px] text-neutral-400 mt-1">
                   {employees} {employees === 1 ? "usuario" : "usuarios"} × {ADMIN_MINUTES_SAVED_PER_USER_PER_DAY} min/día
                 </div>
               </div>
 
-              <div className="min-h-32 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-                <div className="flex items-center gap-2 text-slate-300 text-xs mb-1">
-                  <TimerReset className="w-4 h-4 text-orange-400" aria-hidden="true" />
+              <div className="min-h-32 bg-black/80 p-4 rounded-xl border border-neutral-800">
+                <div className="flex items-center gap-2 text-neutral-300 text-xs mb-1">
+                  <TimerReset className="w-4 h-4 text-orange-500" aria-hidden="true" />
                   <span>Tiempo total estimado</span>
                 </div>
-                <div className="text-3xl font-black tabular-nums text-orange-300">
+                <div className="text-3xl font-black tabular-nums text-orange-500">
                   ~{hoursFormatter.format(totalHoursSaved)} hrs
                 </div>
-                <div className="text-[11px] text-slate-300 mt-1">
+                <div className="text-[11px] text-neutral-400 mt-1">
                   Aproximadamente {hoursFormatter.format(totalHoursSaved / 8)} jornadas de 8 horas
                 </div>
               </div>
 
-              <div className="min-h-32 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-                <div className="flex items-center gap-2 text-slate-300 text-xs mb-1">
+              <div className="min-h-32 bg-black/80 p-4 rounded-xl border border-neutral-800">
+                <div className="flex items-center gap-2 text-neutral-300 text-xs mb-1">
                   <Coins className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                   <span>Valor referencial del tiempo</span>
                 </div>

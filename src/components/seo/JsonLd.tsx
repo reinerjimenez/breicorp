@@ -16,7 +16,7 @@ export function JsonLd({ type = "Organization", data }: JsonLdProps) {
       name: company.legalName,
       alternateName: company.companyName,
       url: siteMetadata.siteUrl,
-      logo: `${siteMetadata.siteUrl}/logo-breicorp.webp`,
+      logo: `${siteMetadata.siteUrl}/nuevo-logo-breicorp.webp`,
       description:
         "Software empresarial, automatización y servicios profesionales en finanzas, consultoría, contabilidad y gestión para empresas en Perú.",
       foundingDate: `${company.foundationYear}`,

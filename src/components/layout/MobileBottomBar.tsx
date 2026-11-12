@@ -98,8 +98,8 @@ export function MobileBottomBar() {
               data-analytics-event={item.label === "Demo" ? "demo_open" : undefined}
               className={`relative flex min-h-11 min-w-0 flex-col items-center justify-center gap-0.5 rounded-[17px] border px-0.5 text-[10px] leading-none transition-[color,background-color,border-color,box-shadow,transform] duration-150 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-orange-600 ${
                 isActive
-                  ? "border-[rgba(255,255,255,0.65)] bg-[rgba(255,255,255,0.45)] [font-weight:650] text-[#FF6003] shadow-[inset_0_1px_0_rgba(255,255,255,0.62)]"
-                  : "border-transparent font-medium text-[rgba(30,41,59,0.82)] hover:bg-white/30 hover:text-orange-700"
+                  ? "border-[rgba(255,255,255,0.65)] bg-[rgba(255,255,255,0.45)] [font-weight:650] text-orange-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.62)]"
+                  : "border-transparent font-medium text-[rgba(23,23,23,0.85)] hover:bg-white/30 hover:text-orange-500"
               }`}
             >
               <Icon className="h-5 w-5 shrink-0" strokeWidth={isActive ? 2.4 : 2} aria-hidden="true" />

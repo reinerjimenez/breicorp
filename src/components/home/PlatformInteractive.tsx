@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -219,7 +219,7 @@ export function PlatformInteractive() {
                 onClick={() => setActiveTab(idx)}
                 className={`flex min-h-11 items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
                   isSelected
-                    ? "bg-orange-700 text-white shadow-md shadow-orange-700/20"
+                    ? "bg-orange-500 text-white shadow-md shadow-orange-500/20"
                     : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80"
                 }`}
               >
@@ -261,7 +261,7 @@ export function PlatformInteractive() {
               <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link
                   href={current.link}
-                  className="inline-flex min-h-11 items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-orange-600 text-white font-bold text-sm transition-colors duration-200 shadow-sm"
+                  className="inline-flex min-h-11 items-center gap-2 px-6 py-3 rounded-xl bg-black hover:bg-orange-500 text-white font-bold text-sm transition-colors duration-200 shadow-sm"
                 >
                   <span>{current.linkText}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -269,7 +269,7 @@ export function PlatformInteractive() {
 
                 <Link
                   href="/contacto"
-                  className="text-sm font-bold text-orange-700 hover:text-slate-800 underline underline-offset-4"
+                  className="text-sm font-bold text-orange-500 hover:text-black underline underline-offset-4"
                 >
                   Solicitar demo de este módulo →
                 </Link>
@@ -278,10 +278,10 @@ export function PlatformInteractive() {
 
             {/* Right Card Preview Column */}
             <div className="lg:col-span-5">
-              <div className="bg-slate-900 rounded-2xl p-6 text-white shadow-xl border border-slate-800 space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div className="bg-black rounded-2xl p-6 text-white shadow-xl border border-neutral-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-neutral-800 pb-3">
                   <div className="flex items-center gap-2">
-                    <current.icon className="w-5 h-5 text-orange-400" />
+                    <current.icon className="w-5 h-5 text-orange-500" />
                     <span className="font-bold text-sm">{current.previewData.title}</span>
                   </div>
                   <span className="text-[10px] uppercase font-bold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
@@ -293,15 +293,15 @@ export function PlatformInteractive() {
                   {current.previewData.items.map((row, idx) => (
                     <div
                       key={idx}
-                      className="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 flex flex-col gap-0.5"
+                      className="bg-neutral-900/80 p-3 rounded-xl border border-neutral-800 flex flex-col gap-0.5"
                     >
-                      <span className="text-xs text-slate-400">{row.label}</span>
+                      <span className="text-xs text-neutral-400">{row.label}</span>
                       <span className="text-sm font-bold text-white">{row.val}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                <div className="pt-2 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-400">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
                     <span>Transacción auditada</span>

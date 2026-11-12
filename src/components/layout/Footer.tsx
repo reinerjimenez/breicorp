@@ -328,7 +328,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="text-neutral-400 transition-colors duration-150 hover:text-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 rounded"
             >
-              Reiner Jairo Jiménez
+              Reiner Jiménez
             </a>
           </p>
         </div>

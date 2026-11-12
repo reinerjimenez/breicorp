@@ -44,6 +44,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteMetadata.siteUrl,
   },
+  icons: {
+    icon: [
+      { url: `${siteMetadata.siteUrl}/favicon.ico`, sizes: "any" },
+      { url: `${siteMetadata.siteUrl}/favicon-32.png`, type: "image/png", sizes: "32x32" },
+      { url: `${siteMetadata.siteUrl}/favicon-16.png`, type: "image/png", sizes: "16x16" },
+      { url: `${siteMetadata.siteUrl}/icon-192.png`, type: "image/png", sizes: "192x192" },
+      { url: `${siteMetadata.siteUrl}/icon-512.png`, type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: `${siteMetadata.siteUrl}/favicon.ico`,
+    apple: [
+      { url: `${siteMetadata.siteUrl}/apple-touch-icon.png`, sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: `${siteMetadata.siteUrl}/site.webmanifest`,
   openGraph: {
     title: "BREICORP | Software Empresarial, Facturación SUNAT y ERP Cloud",
     description:
@@ -59,6 +73,13 @@ export const metadata: Metadata = {
         height: 630,
         type: "image/jpeg",
         alt: "BREICORP — Software empresarial para empresas peruanas",
+      },
+      {
+        url: `${siteMetadata.siteUrl}/icon-512.png`,
+        width: 512,
+        height: 512,
+        type: "image/png",
+        alt: "BREICORP Logo",
       },
     ],
   },
